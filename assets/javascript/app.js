@@ -25,4 +25,18 @@ function renderButtons() {
     };
 };
 
+      // Function to add new tvShow buttons to the exisiting list of buttons
+      $("#tvShowAdd").on("click", function (event) {
+
+        event.preventDefault();
+        // This line grabs the input from the textbox
+        var newShow = $("#tvShowInput").val().trim();
+
+        // Adding newShow from the textbox to our array
+        tvShows.push(newShow);
+
+        // Calling renderButtons which repopulates the tvShows array as buttons (including new button)
+        renderButtons();
+      });
+
 renderButtons();
